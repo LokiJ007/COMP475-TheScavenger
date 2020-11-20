@@ -1,0 +1,20 @@
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X2      EXXB  SW   XK       SX
+X  3     XX   1W       2     X
+X    WWWWXXF  WW   XXFW  W   X
+X  1 WS  XX  1     XX WF W2  X
+X    W   XX    W 2 XX W  W   X
+XF      BXX M  WWWWXX      B X
+X    WWWWXK    2  SXX     WWWX
+X                  XX        X
+XXXXXXXXXXXXXX XXXXXXXXXXXXX X
+XXXXXXXXXXXXXX XXXXXXXXXXXXK X
+XSW      XX  W3W  BXX  B     X
+XWW      XX  WWW   XXSW   1  X
+X    F   KX      F XX W      X
+X  WWW         WWW XX    WWWWX
+X      WWXXWW  M   XX  1 W  FX
+X  F     XX     1  XX     M  X
+X        XXS   WW  KXWW      X
+XP       XX       F          X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
