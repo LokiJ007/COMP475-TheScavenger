@@ -8,6 +8,7 @@ public class Enemy : MovingObject
     public bool skip = true;
     public AudioClip enemyAttack1;
     public AudioClip enemyAttack2;
+    public bool move = false;
 
     private Animator animator;                            //Variable of type Animator to store a reference to the enemy's Animator component.
     private Transform target;                            //Transform to attempt to move toward each turn.
@@ -59,18 +60,27 @@ public class Enemy : MovingObject
         int xDir = 0;
         int yDir = 0;
 
+        
+
         // Is enemy and player in the same column?
         if (Mathf.Abs(target.position.x - transform.position.x) < float.Epsilon)
         {
             // Move up or down
             yDir = target.position.y > transform.position.y ? 1 : -1;
-            i++;
+            
+            move = true;
         }
         // Is enemy and player in the same row?
         else
         {
             // Mmove right or left
             xDir = target.position.x > transform.position.x ? 1 : -1;
+            
+            move = true;
+        }
+
+        if (move)
+        {
             i++;
         }
 
@@ -97,11 +107,7 @@ public class Enemy : MovingObject
 
     protected virtual void OnGUI()
     {
-        MeshRenderer[] marr = this.GetComponentsInChildren<MeshRenderer>(true);
-        foreach (MeshRenderer m in marr)
-        {
-            m.enabled = true;
-        }
+        GetComponent<Renderer>().enabled = true;
     }
-
+    
 }

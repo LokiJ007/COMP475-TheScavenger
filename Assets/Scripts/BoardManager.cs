@@ -39,6 +39,10 @@ public class BoardManager : MonoBehaviour
     public GameObject[] bagTiles;
     public GameObject[] outerWallTiles;
 
+    public TextAsset map;
+
+    
+
     private Transform boardHolder;
     private List<Vector3> gridPositions = new List<Vector3>();
     private char[,] gameMap = new char[20, 30];
@@ -70,10 +74,22 @@ public class BoardManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        StreamReader reader = new StreamReader(new MemoryStream(map.bytes));
         int k = 0;
         char[] nibbleMap;
-        string[] lines = File.ReadAllLines("Assets/Resources/MAP.txt");
-        foreach (string line in lines)
+        //string[] lines = File.ReadAllLines("Assets/Resources/MAP.txt");
+        //foreach (string line in lines)
+        //{
+        //    nibbleMap = (line.ToCharArray());
+        //    for (int j = 0; j < 30; j++)
+        //    {
+        //        gameMap[k, j] = nibbleMap[j];
+        //        //Debug.Log(nibbleMap[j]);
+        //    }
+        //    k++;
+        //}
+        string line = reader.ReadLine();
+        while (line != null)
         {
             nibbleMap = (line.ToCharArray());
             for (int j = 0; j < 30; j++)
@@ -81,6 +97,7 @@ public class BoardManager : MonoBehaviour
                 gameMap[k, j] = nibbleMap[j];
                 //Debug.Log(nibbleMap[j]);
             }
+            line = reader.ReadLine();
             k++;
         }
     }

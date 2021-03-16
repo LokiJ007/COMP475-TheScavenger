@@ -6,32 +6,44 @@ public class HiphopEnemy : Enemy
 {
     public AudioClip enemyHide;
     private int a=0;
+
+
     protected override void OnGUI()
     {
-        if (i < 3)
+       
+        if (i < 15)
         {
             a++;
-            MeshRenderer[] marr = this.GetComponentsInChildren<MeshRenderer>(true);
-            SoundManager.instance.RandomizeSfx(enemyHide);
-            foreach (MeshRenderer m in marr)
+
+            /*for (var ren : Renderer in GetComponentsInChildren<Renderer>())
             {
-                m.enabled = false;
+                ren.enabled = !ren.enabled;
             }
+            */
+            
+            GetComponent<Renderer>().enabled = true;
         }
         else
         {
             a++;
-            if(a == 6)
+            if (i == 30)
             {
                 i = 0;
+                a = 0;
             }
-            MeshRenderer[] marr = this.GetComponentsInChildren<MeshRenderer>(true);
-            foreach (MeshRenderer m in marr)
+
+            /*for (var ren : Renderer in GetComponentsInChildren<Renderer>())
             {
-                m.enabled = true;
+                ren.enabled = !ren.enabled;
             }
+            */
+            //GetComponent<Renderer>().enabled = !GetComponent<Renderer>().enabled;
+            GetComponent<Renderer>().enabled = false;
         }
-    }
+
+    }  
+        
+    
 }
 
 
